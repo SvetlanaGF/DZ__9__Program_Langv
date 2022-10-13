@@ -9,25 +9,14 @@ Console.WriteLine("Задача 64: Вывести чётные числа в п
 Console.Write("Введите значение N: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-void EvenNumbers (int k, int limit)
+void EvenNumbers (int k)
 {
     if (k%2 == 0)
     {
-    if (k >= limit)
-        return;
-    Console.WriteLine($"\t i равно {k}");
-    k++;
-    //i = i-1;
-    EvenNumbers (k, limit);
+        Console.WriteLine($"\t i равно {k}");
     }
+    k = k-1;
+    if (k >= 1)
+        EvenNumbers (k);
 }
-    int i=2;
-    //for (int i = 1; i < n+1; i++)
-    //{
-        //Console.WriteLine($"\ti = {i}");
-        if (i%2 == 0)
-            {
-                EvenNumbers (2, n);
-            }
-    //}
-
+EvenNumbers (n);
